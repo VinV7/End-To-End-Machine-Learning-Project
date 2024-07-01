@@ -18,7 +18,6 @@ Completely free to use and modify.
 
 ### Original (V1)
 
-- Change in analyses done in 01_data_exploration.ipynb and data_preprocessing.py, more conclusions and plots 
 - Utilizes Flask as the API
 - The JSON Formatting is still only using Curly Brackets | {} |
  
@@ -27,6 +26,7 @@ Completely free to use and modify.
 - Utilizes FastAPI as the API
 - The JSON Formatting now requires both Square and Curly Brackets | [{}] |
 - Changed the command for starting the FastAPI in [api.py](https://github.com/VinV7/End-To-End-Machine-Learning-Project/blob/main/app/api.py) 
+- Change in analyses done in 01_data_exploration.ipynb and data_preprocessing.py, more conclusions and plots 
 
 ## Installation
 

@@ -131,14 +131,18 @@ plt.show()
 # End of Analyses
 
 # -. The raw TelCo Dataset CSV contains 7043 rows and 50 columns 
-# -. There are missing values in the 'Offer', 'Internet Type', 'Churn Category' and 'Churn Reason'
+# -. There are missing values in the 'Offer', 'Internet Type', 'Churn Category' and 'Churn Reason' Columns
 # -. The reason of the missing values inside the 'Churn Category' and 'Churn Reason' feature is due to values inside of the Churn Label feature
 # -. Most users are male although it's only a slight difference to the Female
 # -. Most users stayed and did not churn 
-# -. There slight difference in the monthly charge between Female and Male users benefitting Female Users slightly
 # -. There is a linear correlation between Total Charge and Monthly Charge 
 # -. Majority of the services offered are accepted
 # -. Most users churned due to the offers offered by competitor are better
+# -. There's a correlation between the Contract and the likely hood of the customer churning. Customers are more prone to churning when they are in a Month-to-Month contract with the TelCo Provider
+# -. There's a correlation between the offers and the likelyhood of the customer churning. Customers that picked the TelCo Company's Offer E is more likely to churn. Customers that picked Offer A or B are most satisfied making it less likely for them to churn
+# -. There's a correlation between the Monthly Charge and the Internet Type used by the customers. The correlation shows that customers who use Fiber Optic get charged more rather than Customers who use DSL and Cable
+# -. There is no correlation between Tenure in Month and Satisfaction Score, it's equal. Customers who is in their 70 Tenure Months can have both the satisfactory score of 1 and 5.
+# -. Whether the customer has people dependent on them, it doesn't affect whether the customer will churn or not.
 
 # Data Cleaning
 # Missing Numerical Values on Numerical Features are not found (Skipped)
