@@ -3,34 +3,30 @@
 The End-to-End Machine Learning Project was made for the reason of expanding my knowledge regarding Machine Learning and it's full process in real life work scenario. I was inspired to do this project after my mentor asked 'Do you know End-to-End Machine Learning preprocessing', I didn't know anything regarding that topic that time and i decide to learn about it and do a project about it.
 
 ## Contents
-- [Installation](#installation)
 - [Licence](#licence)
+- [Updates](#updates)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
+- [References](#references)
 
 ## Licence
 
-MIT License
+Completely free to use and modify.
 
-Copyright (c) 2021 [Albin Ivandito](https://www.linkedin.com/in/albin-ivandito-36248a2a3/?originalSubdomain=id)
+## Updates
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+### Original (V1)
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+- Change in analyses done in 01_data_exploration.ipynb and data_preprocessing.py, more conclusions and plotting 
+- Utilizes Flask as the API
+- The JSON Formatting is still only using Curly Brackets | {} |
+ 
+### Update (V2)
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+- Utilizes FastAPI as the API
+- The JSON Formatting now requires both Square and Curly Brackets | [{}] |
+- Changed the command for starting the FastAPI in [api.py](https://github.com/VinV7/End-To-End-Machine-Learning-Project/blob/main/app/api.py) 
 
 ## Installation
 
@@ -62,54 +58,59 @@ python setup.py install # Use Python3 if your system doesn't recognise regular P
 
 ## Usage
 
-In order to be able to use and experiment predicting whether the customer will churn or not, first change to the app directory and proceed to start the api.py manually or by using this command
+In order to be able to use and experiment predicting whether the customer will churn or not, first change to the app directory and proceed to start the api.py by using this command
 
 ```bash
 cd app # If you're already on the end-to-end machine learning project directory
-python api.py
+fastapi dev.api
 ```
+
+In order to use the notebooks, it's simple. Just run it manually by pressing the 'Run All' button.
 
 Afterwards do a POST request on [Postman](https://www.postman.com) then use http://127.0.0.1:5000/predict as the address and input your data in Json Format, if you find any other method feel free to do it. But for this, I'll use [Postman API Platform](https://www.postman.com). 
 
 ```bash
 # Json Data Format (Example)
 
-{
-    "Age": [25],
-    "Number of Dependents": [1],
-    "Zip Code": [12345],
-    "Number of Referrals": [2],
-    "Tenure in Months": [12],
-    "Avg Monthly Long Distance Charges": [15.0],
-    "Avg Monthly GB Download": [45.0],
-    "Monthly Charge": [70.0],
-    "Total Charges": [840.0],
-    "Total Refunds": [0.0],
-    "Total Extra Data Charges": [0.0],
-    "Total Long Distance Charges": [180.0],
-    "Total Revenue": [1020.0],
-    "Satisfaction Score": [4],
-    "Churn Score": [50],
-    "CLTV": [1500],
-    "Gender": ["Male"],
-    "Under 30": ["Yes"],
-    "Senior Citizen": ["No"],
-    "Married": ["Yes"],
-    "Dependents": ["No"],
-    "City": ["Springfield"],
-    "Phone Service": ["Yes"],
-    "Multiple Lines": ["No"],
-    "Internet Service": ["DSL"],
-    "Online Security": ["Yes"],
-    "Online Backup": ["No"],
-    "Device Protection Plan": ["Yes"],
-    "Premium Tech Support": ["No"],
-    "Streaming TV": ["No"],
-    "Streaming Movies": ["Yes"],
-    "Streaming Music": ["No"],
-    "Unlimited Data": ["Yes"],
-    "Contract": ["Month-to-Month"]
-}
+[
+    {
+        "Gender": ["Male"],
+        "Age": [25.0],
+        "Under 30": ["Yes"],
+        "Senior Citizen": ["No"],
+        "Married": ["Yes"],
+        "Dependents": ["Yes"],
+        "Number of Dependents": [2],
+        "City": ["New York"],
+        "Zip Code": [12345],
+        "Number of Referrals": [1],
+        "Tenure in Months": [12],
+        "Phone Service": ["Yes"],
+        "Avg Monthly Long Distance Charges": [15.5],
+        "Multiple Lines": ["No"],
+        "Internet Service": ["Yes"],
+        "Avg Monthly GB Download": [50.0],
+        "Online Security": ["Yes"],
+        "Online Backup": ["Yes"],
+        "Device Protection Plan": ["Yes"],
+        "Premium Tech Support": ["Yes"],
+        "Streaming TV": ["Yes"],
+        "Streaming Movies": ["Yes"],
+        "Streaming Music": ["Yes"],
+        "Unlimited Data": ["Yes"],
+        "Contract": ["Month-to-month"],
+        "Monthly Charge": [70.25],
+        "Total Charges": [842.5],
+        "Total Refunds": [10.0],
+        "Total Extra Data Charges": [5.0],
+        "Total Long Distance Charges": [186.0],
+        "Total Revenue": [1038.5],
+        "Satisfaction Score": [3],
+        "Churn Score": [85],
+        "CLTV": [5000]
+    }
+]
+
 ```
 
 If you have successfuly do the post request, the end result generated in the Postman API Platform would look like this 
@@ -134,9 +135,10 @@ Pull requests are welcome. For major changes and improvements
 - [NumPy](https://numpy.org/): Fundamental package for scientific computing with Python.
 - [Matplotlib](https://matplotlib.org/): Plotting library for creating visualizations in Python.
 - [Scikit-learn](https://scikit-learn.org/): Machine learning library for Python.
+- [FastAPI](https://fastapi.tiangolo.com/tutorial/body/): As the guide to creating an API for POST requests
 
 ### Online Resources
 
 - [ChatGPT](https://chatgpt.com): Helping as a guide in this project.
 - [StackOverFlow](https://stackoverflow.com): As a guide in solving problems in this project.
-
+- [Atlassian](https://www.atlassian.com/data/charts/box-plot-complete-guide): As a guide in interpreting Box Plots

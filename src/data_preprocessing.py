@@ -32,11 +32,9 @@ df.isnull().sum()
 
 # Univariate Analysis
 # Categorical Features
-categorical_features = ['Gender', 'Under 30', 'Senior Citizen', 'Married', 
-                        'Dependents', 'Offer',
-                        'Phone Service', 'Internet Service', 'Internet Type', 
-                        'Contract', 'Paperless Billing', 'Payment Method', 
-                        'Customer Status', 'Churn Label', 'Churn Category', 'Churn Reason']
+categorical_features = ['Gender', 'Under 30', 'Senior Citizen', 
+                        'Dependents', 'Offer', 'Internet Type', 
+                        'Contract', 'Churn Label', 'Churn Category',]
 
 # Plotting bar plots for categorical features
 for feature in categorical_features:
@@ -56,7 +54,7 @@ for feature in categorical_features:
 
 # Numerical Features
 numerical_features = ['Age', 'Number of Dependents', 'Tenure in Months', 
-                      'Avg Monthly Long Distance Charges', 'Monthly Charge']
+                      'Monthly Charge', 'Satisfaction Score']
 
 # Plotting histograms for numerical features
 for feature in numerical_features:
@@ -69,12 +67,14 @@ for feature in numerical_features:
     plt.show()
 
 # Bivariate Analysis
-# Tenure in Months vs. Monthly Charge
+
+# Numerical vs. Numerical
+# Tenure in Months vs. Satisfaction Score
 plt.figure(figsize=(10, 6))
-sns.scatterplot(x='Tenure in Months', y='Monthly Charge', data=df)
-plt.title('Tenure in Months vs. Monthly Charge')
+sns.scatterplot(x='Tenure in Months', y='Satisfaction Score', data=df)
+plt.title('Tenure in Months vs. Satisfaction Score')
 plt.xlabel('Tenure in Months')
-plt.ylabel('Monthly Charge')
+plt.ylabel('Satisfaction Score')
 plt.show()
 
 # Monthly Charge vs. Total Charges
@@ -83,6 +83,48 @@ sns.scatterplot(x='Monthly Charge', y='Total Charges', data=df)
 plt.title('Monthly Charge vs. Total Charges')
 plt.xlabel('Monthly Charge')
 plt.ylabel('Total Charges')
+plt.show()
+
+# Categorical vs. Numerical 
+# Gender vs. Monthly Charge
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Gender', y='Monthly Charge', data=df)
+plt.title('Gender vs. Monthly Charge')
+plt.xlabel('Gender')
+plt.ylabel('Monthly Charge')
+plt.show()
+
+# Internet Type vs. Monthly Charge
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Internet Type', y='Monthly Charge', data=df)
+plt.title('Internet Type vs Monthly Charge')
+plt.xlabel('Internet Type')
+plt.ylabel('Monthly Charge')
+plt.show()
+
+# Categorical vs. Categorical
+# Contract vs. Churn Label
+plt.figure(figsize=(10, 6))
+sns.countplot(x='Contract', hue='Churn Label', data=df)
+plt.title('Contract vs. Churn Label')
+plt.xlabel('Contract')
+plt.ylabel('Count')
+plt.show()
+
+# Offer vs. Churn Label
+plt.figure(figsize=(10, 6))
+sns.countplot(x='Offer', hue='Churn Label', data=df)
+plt.title('Offers vs. Churn Label')
+plt.xlabel('Offers')
+plt.ylabel('Count')
+plt.show()
+
+# Dependents vs Churn Label
+plt.figure(figsize=(10, 6))
+sns.countplot(x='Dependents', hue='Churn Label', data=df)
+plt.title('Dependent vs. Churn Label')
+plt.xlabel('Dependent')
+plt.ylabel('Count')
 plt.show()
 
 
