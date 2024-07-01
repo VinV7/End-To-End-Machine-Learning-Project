@@ -18,7 +18,7 @@ Completely free to use and modify.
 
 ### Original (V1)
 
-- Change in analyses done in 01_data_exploration.ipynb and data_preprocessing.py, more conclusions and plotting 
+- Change in analyses done in 01_data_exploration.ipynb and data_preprocessing.py, more conclusions and plots 
 - Utilizes Flask as the API
 - The JSON Formatting is still only using Curly Brackets | {} |
  
