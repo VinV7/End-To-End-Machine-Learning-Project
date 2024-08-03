@@ -50,7 +50,19 @@ python3 -m venv YOUR_VENV_NAME
 source YOUR_VENV_NAME/bin/activate
 ```
 
-After creating a Virtual Environment, proceed to the requirement packages installation using the setup.py by inputing this command inside the terminal.
+After that please install the [Setuptools Library](https://pypi.org/project/setuptools/)
+
+Windows
+```bash
+pip install setuptools
+```
+
+Linux & MacOS
+```bash
+pip3 install setuptools
+```
+
+After creating a Virtual Environment and installing [setuptools library](https://pypi.org/project/setuptools/), proceed to the requirement packages installation using the setup.py by inputing this command inside the terminal.
 
 ```bash
 python setup.py install # Use Python3 if your system doesn't recognise regular Python
